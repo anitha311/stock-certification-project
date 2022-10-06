@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <h4>
+            {{getStockName()}}
+        </h4>
+        <div class="col-md-3" *ngFor="let item of sentimentInfo">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="row">
+                        {{item.month}}
+                    </div>
+                    <div class="row">
+                        Change: {{item.change}}
+                    </div>
+                    <div class="row">
+                        MSPR: {{item.mspr}} 
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img *ngIf="item.change > 0" src="../../assets/uparrow.png" height="30px">
+                    <img *ngIf="item.change <= 0" src="../../assets/down.png" height="30px">
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button id="backBtn" (click)="backtoQuote()" value="Track">Back to list of quotes</button>
+    
+</div>
